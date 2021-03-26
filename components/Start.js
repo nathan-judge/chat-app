@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { View, Text, Button, TextInput, StyleSheet, TouchableOpacity, ImageBackground, } from 'react-native';
 const image = require('../assets/background-image.png');
 export default class Start extends React.Component {
@@ -18,32 +19,36 @@ export default class Start extends React.Component {
                             placeholder='Type here ...'
                         />
                         <Text
-                            style={{ color: 'blue', }}>Chat With: {this.state.name}</Text>
+                            style={{ color: 'blue', paddingBottom: 10, }}>Chat With: {this.state.name}</Text>
 
 
 
+
+                        <Text style={{ paddingBottom: 10, textAlign: 'center', color: 'white', fontSize: 20, }}> Choose Background Color </Text>
+                        <View style={styles.colorCon}>
+                            <TouchableOpacity
+
+                                style={styles.color1}
+                                onPress={() => { this.setState({ color: 'white' }) }}
+                            >
+                            </TouchableOpacity>
+                            <TouchableOpacity
+
+                                style={styles.color2}
+                                onPress={() => { this.setState({ color: 'aqua' }) }}
+                            >
+                            </TouchableOpacity>
+                            <TouchableOpacity
+
+                                style={styles.color3}
+                                onPress={() => { this.setState({ color: '#FF1493' }) }}
+                            >
+                            </TouchableOpacity>
+
+
+                        </View>
                     </View>
 
-                    <Text style={{ paddingBottom: 10, textAlign: 'center', color: '#1E90FF', fontSize: 20, }}> Choose Background Color: </Text>
-                    <View style={styles.colorCon}>
-                        <TouchableOpacity
-                            style={styles.color1}
-                            onPress={() => { this.setState({ color: 'red' }) }}
-                        >
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={styles.color2}
-                            onPress={() => { this.setState({ color: 'blue' }) }}
-                        >
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={styles.color3}
-                            onPress={() => { this.setState({ color: 'yellow' }) }}
-                        >
-                        </TouchableOpacity>
-
-
-                    </View>
                     <Button
                         style={{ paddingBottom: 10, }}
                         title="Go to Chat"
@@ -85,26 +90,27 @@ const styles = StyleSheet.create({
     },
     color1: {
         flex: 1,
-        backgroundColor: 'red',
+        backgroundColor: 'white',
         height: 50,
         borderRadius: 25,
         right: 25
     },
     color2: {
         flex: 1,
-        backgroundColor: 'blue',
+        backgroundColor: 'aqua',
         borderRadius: 25,
         right: 10
     },
     color3: {
         flex: 1,
-        backgroundColor: 'yellow',
+        backgroundColor: '#FF1493',
         borderRadius: 25,
         left: 5
     },
     colorCon: {
         flexDirection: 'row',
         width: 200,
-        marginLeft: 125
+        marginLeft: 30
+
     },
 });
