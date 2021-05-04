@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import AsyncStorage from '@react-native-community/async-storage';
-
 import Start from './components/Start';
 import Chat from './components/Chat';
 // import react native gesture handler
